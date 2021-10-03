@@ -34,4 +34,5 @@ if __name__ == "__main__":
         print(f'Pre-normalize: {points}')
         normalize(points)
         print(f'Final: {points}')
-    print(predict(model, (7, 2)))
+    to_classify = (7, 2)
+    print(predict(model, to_classify))
