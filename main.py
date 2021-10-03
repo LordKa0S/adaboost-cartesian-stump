@@ -4,7 +4,10 @@ if __name__ == "__main__":
     # execute only if run as a script
 
     max_iter = 4
+    '''Number of boosting iterations'''
+
     init_wt = 1/10
+    '''Initial weight for each sample `Point`'''
 
     A1 = Point(1, init_wt, 'a1', 2, 3)
     A2 = Point(1, init_wt, 'a2', 2, 2)
@@ -16,7 +19,10 @@ if __name__ == "__main__":
     B3 = Point(-1, init_wt, 'b3', 5, 3)
     B4 = Point(-1, init_wt, 'b4', 8, 6)
     B5 = Point(-1, init_wt, 'b5', 8, 2)
+
     points = [A1, A2, A3, A4, A5, B1, B2, B3, B4, B5]
+    '''List of labelled sample `Point`s'''
+
     model = []
     for boost_iter in range(max_iter):
         print(f'Iteration: {boost_iter + 1}')
@@ -34,5 +40,8 @@ if __name__ == "__main__":
         print(f'Pre-normalize: {points}')
         normalize(points)
         print(f'Final: {points}')
+
     to_classify = (7, 2)
+    '''Sample to be labelled'''
+
     print(predict(model, to_classify))
